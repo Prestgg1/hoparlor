@@ -1,0 +1,15 @@
+Hoparlor Android telefonunuzu Linux kompüteriniz üçün mümkün qədər az gecikməli dinamikə çevirir.
+
+Kompüterdə kiçik hoparlor-server proqramını işə salın və tətbiqi açın. Telefon kompüteri özü tapır və qoşulur. Qoşulu olduqda kompüterin səsi telefonda çalınır, ayrılanda isə yenidən kompüterə qayıdır. Heç bir IP ünvanı yazmağa ehtiyac yoxdur.
+
+<b>Xüsusiyyətlər</b>
+<ul>
+<li>Aşağı gecikmə: sıxılmamış səs, kiçik paketlər, native AAudio pleyeri və adaptiv bufer</li>
+<li>Wi-Fi və ya USB modem (tethering): USB kabel varsa avtomatik seçilir</li>
+<li>Avtomatik tapma və yenidən qoşulma</li>
+<li>Saat sürüşməsinin kompensasiyası: gecikmə zamanla artmır</li>
+<li>Gecikmənin canlı göstəricisi</li>
+<li>Hesab, reklam, izləmə və internet bağlantısı yoxdur</li>
+</ul>
+
+Kompüter tərəfi hazırda PipeWire istifadə edən Linux sistemlərini dəstəkləyir. Onu layihə səhifəsindən yükləyin.

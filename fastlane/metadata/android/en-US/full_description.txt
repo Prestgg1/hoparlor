@@ -1,0 +1,15 @@
+Hoparlor turns your Android phone into a speaker for your Linux computer, with as little delay as possible.
+
+Run the small hoparlor-server program on your PC and open the app. The phone finds the PC by itself and connects; while it is connected, the PC's sound plays on the phone, and goes back to the PC when you disconnect. No IP addresses to type.
+
+<b>Features</b>
+<ul>
+<li>Low latency: uncompressed audio, small packets, a native AAudio player and an adaptive jitter buffer</li>
+<li>Wi-Fi or USB tethering; the USB cable is picked automatically when available</li>
+<li>Automatic discovery and reconnection</li>
+<li>Clock drift compensation, so the delay does not grow over time</li>
+<li>Live latency breakdown</li>
+<li>No accounts, no ads, no tracking, no internet access</li>
+</ul>
+
+The PC side currently supports Linux with PipeWire. Get it from the project page.

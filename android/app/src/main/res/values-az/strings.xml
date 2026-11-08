@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="found_servers">Bu şəbəkədəki kompüterlər</string>
+    <string name="searching">Axtarılır… Kompüterdə hoparlor-server işləyir? Telefon və kompüter eyni Wi-Fi-da olmalı, ya da USB ilə qoşulub USB tethering açılmalıdır.</string>
+    <string name="manual">Əl ilə qoşul</string>
+    <string name="host">Kompüterin ünvanı</string>
+    <string name="port">Port</string>
+    <string name="connect">Qoşul</string>
+    <string name="disconnect">Ayrıl</string>
+    <string name="buffer_title">Bufer: %1$d ms</string>
+    <string name="buffer_hint">Aşağı dəyər az gecikmə deməkdir. Xışıltı eşidirsinizsə artırın. Ən aşağı dəyərlər USB tethering və 5 GHz Wi-Fi ilə mümkündür.</string>
+    <string name="adaptive">Adaptiv bufer</string>
+    <string name="adaptive_hint">Kəsilmədən sonra avtomatik böyüyür, sonra yavaş-yavaş kiçilir</string>
+    <string name="status_idle">Qoşulmayıb</string>
+    <string name="status_connecting">%1$s ilə qoşulur…</string>
+    <string name="waiting_audio">Səs gözlənilir…</string>
+    <string name="latency_total">≈ %1$d ms</string>
+    <string name="latency_breakdown">paket %1$.1f + şəbəkə %2$.1f + bufer %3$.1f (hədəf %4$.0f) + çıxış %5$.1f ms</string>
+    <string name="stats_line">rx %1$d  itən %2$d  qırılma %3$d  drift %4$d ppm  %5$s/%6$d</string>
+    <string name="help">Qoşulu olduqda kompüterin səsi avtomatik telefona keçir, ayrılanda geri qayıdır. Ən az gecikmə üçün telefonu USB ilə qoşun və USB tethering-i aktiv edin.</string>
+    <string name="channel_name">Səsləndirmə</string>
+    <string name="notification_title">Kompüter səsi çalınır</string>
+    <string name="error_resolve">%1$s tapılmadı (yalnız IPv4)</string>
+    <string name="error_audio">Səs çıxışı açıla bilmədi</string>
+    <string name="via_usb">USB kabel · ən az gecikmə</string>
+    <string name="via_wifi">Wi-Fi</string>
+    <string name="manual_hide">Əl ilə qoşulmanı gizlət</string>
+    <string name="auto_connect">Avtomatik qoşul</string>
+    <string name="auto_connect_hint">Son kompüter tapılan kimi ona qoşul</string>
+</resources>

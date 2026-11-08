@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Hoparlor</string>
+    <string name="found_servers">Computers on this network</string>
+    <string name="searching">Searching… Make sure hoparlor-server is running on your PC and both are on the same Wi-Fi, or connected by USB with USB tethering on.</string>
+    <string name="manual">Connect manually</string>
+    <string name="host">PC address</string>
+    <string name="port">Port</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="buffer_title">Buffer: %1$d ms</string>
+    <string name="buffer_hint">Lower is less delay. Raise it if you hear crackles. USB tethering and 5 GHz Wi-Fi allow the lowest values.</string>
+    <string name="adaptive">Adaptive buffer</string>
+    <string name="adaptive_hint">Grows automatically after a dropout, then slowly shrinks back</string>
+    <string name="status_idle">Not connected</string>
+    <string name="status_connecting">Connecting to %1$s…</string>
+    <string name="waiting_audio">Waiting for audio…</string>
+    <string name="latency_total">≈ %1$d ms</string>
+    <string name="latency_breakdown">packet %1$.1f + net %2$.1f + buffer %3$.1f (target %4$.0f) + output %5$.1f ms</string>
+    <string name="stats_line">rx %1$d  lost %2$d  underruns %3$d  drift %4$d ppm  %5$s/%6$d</string>
+    <string name="help">Sound switches to the phone automatically while connected, and back to the PC when you disconnect. For the lowest delay connect the phone by USB and enable USB tethering.</string>
+    <string name="channel_name">Playback</string>
+    <string name="notification_title">Playing PC audio</string>
+    <string name="error_resolve">Could not resolve %1$s (IPv4 only)</string>
+    <string name="error_audio">Could not open the audio output</string>
+    <string name="via_usb">USB cable · lowest delay</string>
+    <string name="via_wifi">Wi-Fi</string>
+    <string name="manual_hide">Hide manual connection</string>
+    <string name="auto_connect">Connect automatically</string>
+    <string name="auto_connect_hint">Reconnect to the last computer as soon as it is found</string>
+</resources>

@@ -1,0 +1,54 @@
+Categories:
+  - Multimedia
+  - Connectivity
+License: GPL-3.0-or-later
+AuthorName: Prestgg1
+SourceCode: https://github.com/Prestgg1/hoparlor
+IssueTracker: https://github.com/Prestgg1/hoparlor/issues
+
+AutoName: Hoparlor
+
+RepoType: git
+Repo: https://github.com/Prestgg1/hoparlor
+
+# One APK per ABI: versionCode = base * 10 + digit (see android/app/build.gradle.kts).
+Builds:
+  - versionName: 0.1.0
+    versionCode: 11
+    commit: v0.1.0
+    subdir: android/app
+    gradle:
+      - yes
+    ndk: 28.2.13676358
+    gradleprops:
+      - hoparlor.abis=armeabi-v7a
+
+  - versionName: 0.1.0
+    versionCode: 12
+    commit: v0.1.0
+    subdir: android/app
+    gradle:
+      - yes
+    ndk: 28.2.13676358
+    gradleprops:
+      - hoparlor.abis=arm64-v8a
+
+  - versionName: 0.1.0
+    versionCode: 13
+    commit: v0.1.0
+    subdir: android/app
+    gradle:
+      - yes
+    ndk: 28.2.13676358
+    gradleprops:
+      - hoparlor.abis=x86_64
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+VercodeOperation:
+  - '%c * 10 + 1'
+  - '%c * 10 + 2'
+  - '%c * 10 + 3'
+UpdateCheckData: android/app/build.gradle.kts|versionCode = (\d+)|.|versionName = "([^"]+)"
+CurrentVersion: 0.1.0
+CurrentVersionCode: 13

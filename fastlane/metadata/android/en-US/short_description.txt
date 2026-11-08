@@ -1,0 +1,1 @@
+Use your phone as a low-latency speaker for your Linux PC, over Wi-Fi or USB

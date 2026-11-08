@@ -1,0 +1,16 @@
+# Install (see README.md):
+#   install -Dm755 server/target/release/hoparlor-server ~/.local/bin/hoparlor-server
+#   install -Dm644 server/dist/hoparlor-server.service ~/.config/systemd/user/hoparlor-server.service
+#   systemctl --user enable --now hoparlor-server
+[Unit]
+Description=Hoparlor - use your phone as a speaker
+After=pipewire.service pipewire-pulse.service
+Wants=pipewire.service
+
+[Service]
+ExecStart=%h/.local/bin/hoparlor-server
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
