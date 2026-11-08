@@ -75,6 +75,35 @@ cd android
 ./gradlew assembleRelease -Phoparlor.abis=arm64-v8a  # one ABI
 ```
 
+### Reproducible release build
+
+F-Droid builds Hoparlor from source and publishes it under **our** signing key, which only
+works if its build is byte-for-byte identical to ours. Build releases exactly like F-Droid:
+
+```sh
+git clone https://github.com/Prestgg1/hoparlor.git && cd hoparlor
+git checkout v0.1.0                       # a clean tree at the tagged commit
+export JAVA_HOME=/path/to/jdk-21          # F-Droid builds with JDK 21
+git clone https://gitlab.com/fdroid/reproducible-apk-tools.git ../reproducible-apk-tools
+
+cd android/app                            # F-Droid's `subdir`
+for abi in armeabi-v7a arm64-v8a x86_64; do
+  ../gradlew -q clean assembleRelease -Phoparlor.abis=$abi
+  python3 ../../../reproducible-apk-tools/zipalign.py --page-size 16 --pad-like-apksigner \
+      build/outputs/apk/release/app-release-unsigned.apk hoparlor-0.1.0-$abi.apk
+  apksigner sign --ks <release.keystore> --v1-signing-enabled false hoparlor-0.1.0-$abi.apk
+done
+```
+
+| Must match | Why |
+| --- | --- |
+| **JDK 21** | another JDK produces a slightly different `classes.dex` |
+| **Clean tree at the tagged commit** | AGP embeds the git state in `META-INF/version-control-info.textproto` |
+| **NDK 28.2.13676358** | the native library must compile identically |
+| **The `zipalign.py` call** | F-Droid applies the same alignment in its postbuild step |
+
+Without `android/keystore.properties` the release build stays unsigned, which is what F-Droid needs.
+
 ## Troubleshooting
 
 - **The PC does not show up.** Both devices must be on the same network (or connected by USB with tethering on), and the firewall must allow UDP 47800–47801. Some public or guest Wi-Fi networks block devices from seeing each other; use **Connect manually** with the PC's IP address, or a USB cable.

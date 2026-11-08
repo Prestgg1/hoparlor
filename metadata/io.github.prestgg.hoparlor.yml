@@ -3,6 +3,7 @@ Categories:
   - Connectivity
 License: GPL-3.0-or-later
 AuthorName: Prestgg1
+AuthorEmail: prestgg12@gmail.com
 SourceCode: https://github.com/Prestgg1/hoparlor
 IssueTracker: https://github.com/Prestgg1/hoparlor/issues
 
@@ -11,37 +12,59 @@ AutoName: Hoparlor
 RepoType: git
 Repo: https://github.com/Prestgg1/hoparlor
 
-# One APK per ABI: versionCode = base * 10 + digit (see android/app/build.gradle.kts).
 Builds:
   - versionName: 0.1.0
     versionCode: 11
-    commit: v0.1.0
+    commit: f36ee4f7725f97e49615f6967052eafc6b8e2075
     subdir: android/app
     gradle:
       - yes
+    binary: https://github.com/Prestgg1/hoparlor/releases/download/v%v/hoparlor-%v-armeabi-v7a.apk
+    srclibs:
+      - reproducible-apk-tools@v0.3.2
     ndk: 28.2.13676358
     gradleprops:
       - hoparlor.abis=armeabi-v7a
+    postbuild:
+      - mv $$OUT$$ unaligned.apk
+      - $$reproducible-apk-tools$$/zipalign.py --page-size 16 --pad-like-apksigner
+        --replace unaligned.apk $$OUT$$
 
   - versionName: 0.1.0
     versionCode: 12
-    commit: v0.1.0
+    commit: f36ee4f7725f97e49615f6967052eafc6b8e2075
     subdir: android/app
     gradle:
       - yes
+    binary: https://github.com/Prestgg1/hoparlor/releases/download/v%v/hoparlor-%v-arm64-v8a.apk
+    srclibs:
+      - reproducible-apk-tools@v0.3.2
     ndk: 28.2.13676358
     gradleprops:
       - hoparlor.abis=arm64-v8a
+    postbuild:
+      - mv $$OUT$$ unaligned.apk
+      - $$reproducible-apk-tools$$/zipalign.py --page-size 16 --pad-like-apksigner
+        --replace unaligned.apk $$OUT$$
 
   - versionName: 0.1.0
     versionCode: 13
-    commit: v0.1.0
+    commit: f36ee4f7725f97e49615f6967052eafc6b8e2075
     subdir: android/app
     gradle:
       - yes
+    binary: https://github.com/Prestgg1/hoparlor/releases/download/v%v/hoparlor-%v-x86_64.apk
+    srclibs:
+      - reproducible-apk-tools@v0.3.2
     ndk: 28.2.13676358
     gradleprops:
       - hoparlor.abis=x86_64
+    postbuild:
+      - mv $$OUT$$ unaligned.apk
+      - $$reproducible-apk-tools$$/zipalign.py --page-size 16 --pad-like-apksigner
+        --replace unaligned.apk $$OUT$$
+
+AllowedAPKSigningKeys: 0c733117b3742ed2d6995b0a47f9e3cc172a1cc40a7ce9062a898061661ba4ee
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
